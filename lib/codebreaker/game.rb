@@ -11,11 +11,29 @@ module Codebreaker
       end
 
       def guess(guess)
-        if @secret.include?(guess[0])
-          @output.puts('-')
-        else
-          @output.puts('')
+        result = '+'*exact_match_count(guess) + '-'*number_match_count(guess)
+        @output.puts result
+      end
+
+      def exact_match?(guess, index)
+        guess[index] == @secret[index]
+      end
+
+      def number_match?(guess, index)
+        @secret.include?(guess[index]) && !exact_match?(guess, index)
+      end
+
+      def exact_match_count(guess)
+        (0..3).inject(0) do |count, index|
+          count + (exact_match?(guess, index) ? 1 : 0)
         end
       end
+
+      def number_match_count(guess)
+        (0..3).inject(0) do |count, index|
+          count + (number_match?(guess, index) ? 1 : 0)
+        end
+      end
+
 		end
 end

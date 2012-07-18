@@ -243,13 +243,16 @@ nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
 map <silent> <F2> :if &guioptions =~# 'T' |set guioptions-=T |set guioptions-=m |else |set guioptions+=T |set guioptions+=m |endif
+map <F6> :ConqueTerm bash
 map <F1> :NERDTreeToggle
+map <F7> :!nautilus .
 snoremap <Left> bi
 snoremap <Right> a
 snoremap <BS> b<BS>
 snoremap <silent> <S-Tab> i<Right>=snipMate#BackwardsSnippet()
 nmap <F5> :GundoToggle
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <F11> :call conque_term#exec_file()
 xnoremap <silent> <Plug>unimpairedMoveDown :exe 'normal! m`'|exe '''<,''>move''>+'.v:count1``
 xnoremap <silent> <Plug>unimpairedMoveUp :exe 'normal! m`'|exe '''<,''>move--'.v:count1``
 nmap <silent> <Plug>unimpairedTLast :exe "tlast ".(v:count ? v:count : "")
@@ -388,7 +391,7 @@ set listchars=tab:\ \ ,trail:.,extends:>,precedes:<
 set mouse=a
 set printoptions=paper:letter
 set ruler
-set runtimepath=~/.vim/janus/vim/core/before,~/.vim/janus/vim/core/janus,~/.vim/janus/vim/core/pathogen,~/.vim/janus/vim/colors/getafe,~/.vim/janus/vim/colors/github,~/.vim/janus/vim/colors/irblack,~/.vim/janus/vim/colors/janus-colors,~/.vim/janus/vim/colors/molokai,~/.vim/janus/vim/colors/pyte,~/.vim/janus/vim/colors/sampler-pack,~/.vim/janus/vim/colors/solarized,~/.vim/janus/vim/colors/vividchalk,~/.vim/janus/vim/langs/arduino,~/.vim/janus/vim/langs/clojure,~/.vim/janus/vim/langs/coffeescript,~/.vim/janus/vim/langs/csv,~/.vim/janus/vim/langs/cucumber,~/.vim/janus/vim/langs/git,~/.vim/janus/vim/langs/haml,~/.vim/janus/vim/langs/handlebars,~/.vim/janus/vim/langs/javascript,~/.vim/janus/vim/langs/less,~/.vim/janus/vim/langs/markdown,~/.vim/janus/vim/langs/mustache,~/.vim/janus/vim/langs/nodejs,~/.vim/janus/vim/langs/puppet,~/.vim/janus/vim/langs/rails,~/.vim/janus/vim/langs/rspec,~/.vim/janus/vim/langs/ruby,~/.vim/janus/vim/langs/scala,~/.vim/janus/vim/langs/scss,~/.vim/janus/vim/langs/tasks,~/.vim/janus/vim/langs/textile,~/.vim/janus/vim/tools/before,~/.vim/janus/vim/tools/buffergator,~/.vim/janus/vim/tools/css-color,~/.vim/janus/vim/tools/ctrlp,~/.vim/janus/vim/tools/easymotion,~/.vim/janus/vim/tools/endwise,~/.vim/janus/vim/tools/fugitive,~/.vim/janus/vim/tools/gist,~/.vim/janus/vim/tools/gundo,~/.vim/janus/vim/tools/indent-object,~/.vim/janus/vim/tools/janus,~/.vim/janus/vim/tools/kwbd,~/.vim/janus/vim/tools/matchit,~/.vim/janus/vim/tools/narrowregion,~/.vim/janus/vim/tools/nerdcommenter,~/.vim/janus/vim/tools/nerdtree,~/.vim/janus/vim/tools/rename2,~/.vim/janus/vim/tools/snipmate,~/.vim/janus/vim/tools/snipmate-snippets,~/.vim/janus/vim/tools/supertab,~/.vim/janus/vim/tools/surround,~/.vim/janus/vim/tools/syntastic,~/.vim/janus/vim/tools/tagbar,~/.vim/janus/vim/tools/tasks,~/.vim/janus/vim/tools/tlib,~/.vim/janus/vim/tools/unimpaired,~/.vim/janus/vim/tools/vim-addon-mw-utils,~/.vim/janus/vim/tools/vimwiki,~/.vim/janus/vim/tools/vroom,~/.vim/janus/vim/tools/watchtower,~/.vim/janus/vim/tools/webapi,~/.vim/janus/vim/tools/zoomwin,~/.janus/autoclose,~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/janus/vim/tools/css-color/after,~/.vim/janus/vim/tools/janus/after,~/.vim/janus/vim/tools/snipmate/after,~/.vim/janus/vim/langs/coffeescript/after,~/.vim/janus/vim/core/janus/after
+set runtimepath=~/.vim/janus/vim/core/before,~/.vim/janus/vim/core/janus,~/.vim/janus/vim/core/pathogen,~/.vim/janus/vim/colors/getafe,~/.vim/janus/vim/colors/github,~/.vim/janus/vim/colors/irblack,~/.vim/janus/vim/colors/janus-colors,~/.vim/janus/vim/colors/molokai,~/.vim/janus/vim/colors/pyte,~/.vim/janus/vim/colors/sampler-pack,~/.vim/janus/vim/colors/solarized,~/.vim/janus/vim/colors/vividchalk,~/.vim/janus/vim/langs/arduino,~/.vim/janus/vim/langs/clojure,~/.vim/janus/vim/langs/coffeescript,~/.vim/janus/vim/langs/csv,~/.vim/janus/vim/langs/cucumber,~/.vim/janus/vim/langs/git,~/.vim/janus/vim/langs/haml,~/.vim/janus/vim/langs/handlebars,~/.vim/janus/vim/langs/javascript,~/.vim/janus/vim/langs/less,~/.vim/janus/vim/langs/markdown,~/.vim/janus/vim/langs/mustache,~/.vim/janus/vim/langs/nodejs,~/.vim/janus/vim/langs/puppet,~/.vim/janus/vim/langs/rails,~/.vim/janus/vim/langs/rspec,~/.vim/janus/vim/langs/ruby,~/.vim/janus/vim/langs/scala,~/.vim/janus/vim/langs/scss,~/.vim/janus/vim/langs/tasks,~/.vim/janus/vim/langs/textile,~/.vim/janus/vim/tools/before,~/.vim/janus/vim/tools/buffergator,~/.vim/janus/vim/tools/css-color,~/.vim/janus/vim/tools/ctrlp,~/.vim/janus/vim/tools/easymotion,~/.vim/janus/vim/tools/endwise,~/.vim/janus/vim/tools/fugitive,~/.vim/janus/vim/tools/gist,~/.vim/janus/vim/tools/gundo,~/.vim/janus/vim/tools/indent-object,~/.vim/janus/vim/tools/janus,~/.vim/janus/vim/tools/kwbd,~/.vim/janus/vim/tools/matchit,~/.vim/janus/vim/tools/narrowregion,~/.vim/janus/vim/tools/nerdcommenter,~/.vim/janus/vim/tools/nerdtree,~/.vim/janus/vim/tools/rename2,~/.vim/janus/vim/tools/snipmate,~/.vim/janus/vim/tools/snipmate-snippets,~/.vim/janus/vim/tools/supertab,~/.vim/janus/vim/tools/surround,~/.vim/janus/vim/tools/syntastic,~/.vim/janus/vim/tools/tagbar,~/.vim/janus/vim/tools/tasks,~/.vim/janus/vim/tools/tlib,~/.vim/janus/vim/tools/unimpaired,~/.vim/janus/vim/tools/vim-addon-mw-utils,~/.vim/janus/vim/tools/vimwiki,~/.vim/janus/vim/tools/vroom,~/.vim/janus/vim/tools/watchtower,~/.vim/janus/vim/tools/webapi,~/.vim/janus/vim/tools/zoomwin,~/.janus/ConqueTerm,~/.janus/autoclose,~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/janus/vim/tools/css-color/after,~/.vim/janus/vim/tools/janus/after,~/.vim/janus/vim/tools/snipmate/after,~/.vim/janus/vim/langs/coffeescript/after,~/.vim/janus/vim/core/janus/after
 set shiftwidth=2
 set smartcase
 set statusline=%f\ %m\ %rLine:%l/%L[%p%%]Col:%vBuf:#%n[%b][0x%B]
@@ -405,39 +408,40 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +7 lib/codebreaker/game.rb
-badd +0 features/step_definitions/codebreaker_steps.rb
-args ~/spec/codebreakder
-edit features/step_definitions/codebreaker_steps.rb
+badd +0 lib/codebreaker/game.rb
+badd +0 spec/codebreaker/game_spec.rb
+silent! argdel *
+edit lib/codebreaker/game.rb
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 25 + 60) / 120)
-exe 'vert 2resize ' . ((&columns * 94 + 60) / 120)
 argglobal
-enew
-file NERD_tree_1
+nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
 setlocal balloonexpr=
 setlocal nobinary
-setlocal bufhidden=hide
-setlocal nobuflisted
-setlocal buftype=nofile
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
 setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
+setlocal comments=:#
+setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -446,18 +450,18 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal cursorline
-setlocal define=
+setlocal nocursorline
+setlocal define=^\\s*#\\s*define
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'nerdtree'
-setlocal filetype=nerdtree
+if &filetype != 'ruby'
+setlocal filetype=ruby
 endif
 setlocal foldcolumn=0
-setlocal nofoldenable
+setlocal foldenable
 setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -467,18 +471,18 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcq
+setlocal formatoptions=croql
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
+setlocal iminsert=0
 setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal include=^\\s*\\<\\(load\\>\\|require\\>\\|autoload\\s*:\\=[\"']\\=\\h\\w*[\"']\\=,\\)
+setlocal includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.rb','')
+setlocal indentexpr=GetRubyIndent(v:lnum)
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=else,=elsif,=when,=ensure,=rescue,==begin,==end
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
+setlocal keywordprg=ri\ -T
 setlocal nolinebreak
 setlocal nolisp
 set list
@@ -486,13 +490,13 @@ setlocal list
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
-setlocal nomodifiable
+setlocal modifiable
 setlocal nrformats=octal,hex
 set number
-setlocal nonumber
+setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/i686-linux,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1/i686-linux,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/i686-linux
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -509,24 +513,36 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
-setlocal suffixesadd=
-setlocal noswapfile
+setlocal statusline=
+setlocal suffixesadd=.rb
+setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'nerdtree'
-setlocal syntax=nerdtree
+if &syntax != 'ruby'
+setlocal syntax=ruby
 endif
 setlocal tabstop=2
-setlocal tags=~/spec/codebreakder/.git/nerdtree.tags,~/spec/codebreakder/.git/tags,./tags,./TAGS,tags,TAGS
+setlocal tags=~/spec/codebreakder/.git/ruby.tags,~/spec/codebreakder/.git/tags,./tags,./TAGS,tags,TAGS,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/i686-linux/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/1.9.1/i686-linux/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/vendor_ruby/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/i686-linux/tags
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
 setlocal nowinfixheight
-setlocal winfixwidth
+setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-wincmd w
+silent! normal! zE
+let s:l = 19 - ((8 * winheight(0) + 15) / 30)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+19
+normal! 010l
+tabedit spec/codebreaker/game_spec.rb
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
 argglobal
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
@@ -641,16 +657,12 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 41 - ((29 * winheight(0) + 15) / 30)
+let s:l = 41 - ((13 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 41
-normal! 02l
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 25 + 60) / 120)
-exe 'vert 2resize ' . ((&columns * 94 + 60) / 120)
+normal! 031l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
