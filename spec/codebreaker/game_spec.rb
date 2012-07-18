@@ -58,5 +58,11 @@ module Codebreaker
             end
           end
         end
+
+        it "sends the mark to output" do
+          game.start('1234')
+          output.should_receive(:puts).with('++++')
+          game.guess('1234')
+        end
 		end
 end
